@@ -19,6 +19,7 @@ function saveTask(e) {
         }),
         headers: {
             "content-type": "application/json",
+            "Access-Control-Allow-Origin": "*",
         }
     }).then(function (response) {
         getTasks();
@@ -71,6 +72,7 @@ function deleteTask(id) {
     // fetch('http://localhost:8080/todo/' + id, {
     fetch('https://moderntodo-app.herokuapp.com/todo/' + id, {
         method: 'DELETE',
+        headers:{"Access-Control-Allow-Origin": "*"},
     }).then(function (response) {
         getTasks();
         window.location.reload();
