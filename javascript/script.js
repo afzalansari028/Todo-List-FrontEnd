@@ -73,6 +73,7 @@ function deleteTask(id) {
         method: 'DELETE',
     }).then(function (response) {
         getTasks();
+        window.location.reload();
         return response.json()
     }).then(function (data) {
         console.log(data)
