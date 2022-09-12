@@ -13,7 +13,8 @@ function register(e) {
     let retypePassword = document.getElementById('RetypePassword').value;
     console.log(username, email, password, retypePassword)
 
-    fetch("http://localhost:8080/register", {
+    // fetch("http://localhost:8080/register", {
+    fetch("https://moderntodo-app.herokuapp.com/register", {
         method: 'POST',
         headers: {
             "content-type": "application/json",

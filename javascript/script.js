@@ -10,7 +10,8 @@ function saveTask(e) {
     let description = document.getElementById('description').value;
 
     //fetch post request
-    fetch("http://localhost:8080/todo", {
+    // fetch("http://localhost:8080/todo", {
+    fetch("https://moderntodo-app.herokuapp.com/todo", {
         method: 'POST',
         body: JSON.stringify({
             title: title,
@@ -33,7 +34,8 @@ function saveTask(e) {
 //show todo list
 function getTasks() {
 
-    fetch("http://localhost:8080/todo").then((data) => {
+    // fetch("http://localhost:8080/todo").then((data) => {
+    fetch("https://moderntodo-app.herokuapp.com/todo").then((data) => {
         // console.log(data)
         return data.json()  //converted to object
     }).then((objectData) => {
@@ -66,7 +68,8 @@ function getTasks() {
 function deleteTask(id) {
     // console.log(id)
 
-    fetch('http://localhost:8080/todo/' + id, {
+    // fetch('http://localhost:8080/todo/' + id, {
+    fetch('https://moderntodo-app.herokuapp.com/todo/' + id, {
         method: 'DELETE',
     }).then(function (response) {
         getTasks();
