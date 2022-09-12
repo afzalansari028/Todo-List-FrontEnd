@@ -28,10 +28,8 @@ function login(e){
             // swal("Welcome!", "Login success", "success");
             // location.href="http://localhost:8080/todo"
             window.location = "./todolist.html"
-        }else if(data == "empty fields"){
-            swal("Please enter all the fields properly");
-        }else{
-            // console.log("Invalid user");
+        }else if(data == "User not found"){
+            //  console.log("Invalid user");
             swal("Please enter the valid cridentials");
         }
     }).catch(function (error){
